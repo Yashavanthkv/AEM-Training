@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1587048683309
+Build-Jdk: 1.8.0_242
+Built-By: yashavanth_vasantha
+Bundle-Description: Core bundle for configDS
+Bundle-ManifestVersion: 2
+Bundle-Name: configDS - Core
+Bundle-SymbolicName: configDS.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.community.config.core.filters;version="1.0.0";uses:=
+ "javax.servlet",com.community.config.core.listeners;version="1.0.0";use
+ s:="org.osgi.service.event",com.community.config.core.models;version="1
+ .0.0";uses:="javax.annotation,javax.inject,org.apache.sling.api.resourc
+ e,org.apache.sling.models.annotations",com.community.config.core;versio
+ n="1.0",com.community.config.core.schedulers;version="1.0.0",com.commun
+ ity.config.core.servlets;version="1.0.0";uses:="javax.servlet,org.apach
+ e.sling.api,org.apache.sling.api.servlets"
+Import-Package: javax.inject;version="0.0.0",javax.annotation,javax.serv
+ let,org.apache.sling.api;version="[2.3,3)",org.apache.sling.api.request
+ ;version="[2.4,3)",org.apache.sling.api.resource;version="[2.9,3)",org.
+ apache.sling.api.servlets;version="[2.1,3)",org.apache.sling.models.ann
+ otations;version="[1.2,2)",org.apache.sling.settings;version="[1.3,2)",
+ org.osgi.service.event;version="[1.3,2)",org.slf4j;version="[1.5,2)"
+Provide-Capability: osgi.service;objectClass:List<String>="com.community
+ .config.core.MySimpleService",osgi.service;objectClass:List<String>="ja
+ va.lang.Runnable",osgi.service;objectClass:List<String>="javax.servlet.
+ Filter",osgi.service;objectClass:List<String>="javax.servlet.Servlet",o
+ sgi.service;objectClass:List<String>="org.osgi.service.event.EventHandl
+ er"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compone
+ nt)(version>=1.3.0)(!(version>=2.0.0)))",osgi.service;filter:="(objectC
+ lass=org.apache.sling.settings.SlingSettingsService)";effective:=active
+ ,osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.community.config.core.MySimpleServiceImp
+ l.xml,OSGI-INF/com.community.config.core.filters.LoggingFilter.xml,OSGI
+ -INF/com.community.config.core.listeners.SimpleResourceListener.xml,OSG
+ I-INF/com.community.config.core.schedulers.SimpleScheduledTask.xml,OSGI
+ -INF/com.community.config.core.servlets.SimpleServlet.xml
+Sling-Model-Packages: com.community.config.core
+Tool: Bnd-3.3.0.201609221906
